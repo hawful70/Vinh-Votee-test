@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-size: 13px;
+  background-color: $white !important;
+}
+
+#root {
+  min-height: inherit;
+  .App {
+    min-height: inherit;
+
+    .wordle-content {
+      background-color: transparent;
+      min-height: inherit;
+    }
+  }
+}

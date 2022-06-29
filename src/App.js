@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { Layout, Row, Col } from 'antd';
+import WordleForm from 'components/WordleForm/WordleForm';
+import WordleList from 'components/WordleList/WordleList';
 
-function App() {
+const App = () => {
+  const { Content } = Layout;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Layout className="wordle-content">
+        <Content>
+          <div className="middle-content">
+            <Row gutter={[24, 24]} justify="center" className='mt-12'>
+              <Col xs={24} md={8} sm={24}>
+                <WordleForm />
+              </Col>
+            </Row>
+            <Row gutter={[24, 24]} className='mt-12'>
+              <Col xs={24} md={24} sm={24}>
+                <WordleList />
+              </Col>
+            </Row>
+          </div>
+        </Content>
+      </Layout>
     </div>
   );
-}
+};
 
 export default App;
